@@ -27,7 +27,6 @@ public class Frame extends JFrame{
             try {
                 throw new Exception("Cannot run WINDOW as the file may be modified and not saved or may have been deleted");
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
