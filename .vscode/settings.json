@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "app-code/bin",
+        "app-code"
+    ]
+}
