@@ -23,7 +23,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(x, y, 50, 50);
-        g.drawString("X = " + x + "Y = " + y, 40, 50);
+        g.drawString("X = " + x + "Y = " + y, 0, 0);
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -73,14 +73,14 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
             left();
-            if (x < 0 || x == -1) {
+            if (x < 0) {
                 x = 0;
             }
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             right();
             if (x > 436) {
-                x = x - 2;
+                x = x + 2;
             }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
@@ -102,14 +102,14 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
             stopMovement_LEFT();
-            if (x < 0 || x == -1) {
+            if (x < 0) {
                 x = 0;
             }
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             stopMovement_RIGHT();
             if (x > 436) {
-                x = x - 2;
+                x = x + 2;
             }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
