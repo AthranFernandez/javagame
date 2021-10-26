@@ -23,6 +23,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(x, y, 50, 50);
+        g.drawString("X = " + x + "Y = " + y, 40, 50);
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -56,17 +57,14 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     }
     public void stopMovement_DOWN() {
         vely = 0;
-
         velx = velx + 0;
     }
     public void stopMovement_LEFT() {
         velx = 0;
-
         vely = vely + 0;
     }
     public void stopMovement_RIGHT() {
         velx = 0;
-
         vely = vely + 0;
     }
 
@@ -75,16 +73,24 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
             left();
-            
+            if (x < 0 || x == -1) {
+                x = 0;
+            }
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             right();
+            if (x > 436) {
+                x = x - 2;
+            }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             down();
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
             up();
+            if (y < 0) {
+                y = 0;
+            }
         }
     }
 
@@ -96,15 +102,24 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
             stopMovement_LEFT();
+            if (x < 0 || x == -1) {
+                x = 0;
+            }
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             stopMovement_RIGHT();
+            if (x > 436) {
+                x = x - 2;
+            }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             stopMovement_DOWN();
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
             stopMovement_UP();
+            if (y < 0) {
+                y = 0;
+            }
         }
         
     }
