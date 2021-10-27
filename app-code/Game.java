@@ -79,9 +79,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             right();
-            if (x > 436) {
-                x = x + 2;
-            }
+            //checck if the graphic aka player moves out of the boundary
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             down();
