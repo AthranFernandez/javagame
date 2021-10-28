@@ -6,6 +6,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     public int x = 0, y = 0, velx = 0, vely = 0;
     public boolean hitAnObject = false;
+    public int xBound = 443, yBound = 420;
     public Color c = Color.BLACK;
     Timer timer = new Timer(5, this);
 
@@ -16,6 +17,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
+        new Frame();
     }
 
     @Override
@@ -23,13 +25,13 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(x, y, 50, 50);
-        g.drawString("X = " + x + "Y = " + y, 0, 0);
+        g.drawString("X = " + x + "Y = " + y, 30, 40);
     }
 
     public void actionPerformed(ActionEvent ae) {
-        repaint();
         x += velx;
         y += vely;
+        repaint();
     }
 
     public void left() {
@@ -79,10 +81,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             right();
-            //checck if the graphic aka player moves out of the boundary
+            if (x > 443)  {
+                velx = 0;
+                x = 443;
+            }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             down();
+            if (y > 425) {
+                vely = 0;
+                y = 425;
+            }
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
             up();
@@ -106,12 +115,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         }
         else if (keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
             stopMovement_RIGHT();
-            if (x > 436) {
-                x = x + 2;
+            if (x > 443) {
+                velx = 0;
+                x = 443;
             }
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             stopMovement_DOWN();
+            if (y > 420) {
+                vely = 0;
+                y = 420;
+            }
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
             stopMovement_UP();

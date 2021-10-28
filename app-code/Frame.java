@@ -6,10 +6,11 @@ public class Frame extends JFrame{
     //makes a window -[ JFRAME ] and initializes it
 
     public boolean isRunning = false;
+    public int w = 500, h = 500;
 
     public void Win_init() {
         add(new Game());
-        setSize(new Dimension(500, 500));
+        setSize(new Dimension(w, h));
         setLocationRelativeTo(null);
         setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
