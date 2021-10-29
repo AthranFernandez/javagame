@@ -12,7 +12,7 @@ public class Frame extends JFrame{
         add(new Game());
         setSize(new Dimension(w, h));
         setLocationRelativeTo(null);
-        setResizable(true);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }

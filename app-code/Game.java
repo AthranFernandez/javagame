@@ -25,7 +25,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(x, y, 50, 50);
-        g.drawString("X = " + x + "Y = " + y, 30, 40);
+        g.drawString("X = " + x + "Y = " + y, 375, 25);
     }
 
     public void actionPerformed(ActionEvent ae) {
