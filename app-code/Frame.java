@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Frame extends JFrame{
+public class Frame extends JFrame {
 
     //makes a window -[ JFRAME ] and initializes it
 
@@ -15,6 +17,32 @@ public class Frame extends JFrame{
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+
+
+        JButton jbtn = new JButton("Add Panel");
+        jbtn.setBounds(50, 50, 80, 35);
+        jbtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                NewWindow();
+            }
+            
+        });
+
+        add(jbtn, BorderLayout.SOUTH);
+        jbtn.setVisible(true);
+
+    }
+
+    public void NewWindow() {
+        JFrame f = new JFrame("Add Existing Item");
+        f.setSize(new Dimension(450, 650));  
+        f.setLocationRelativeTo(null);
+        f.setResizable(false);
+        f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        f.setVisible(true);
     }
 
     //new Object() that calls Win_init

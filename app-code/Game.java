@@ -90,7 +90,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             down();
             if (y > 425) {
                 vely = 0;
-                y = 425;
+                y = 425;            
             }
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
