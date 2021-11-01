@@ -10,6 +10,8 @@ public class Frame extends JFrame {
     public boolean isRunning = false;
     public int w = 500, h = 500;
 
+    public JButton jbtn;
+
     public void Win_init() {
         add(new Game());
         setSize(new Dimension(w, h));
@@ -19,7 +21,7 @@ public class Frame extends JFrame {
         setVisible(true);
 
 
-        JButton jbtn = new JButton("Add Panel");
+        jbtn = new JButton("Add Panel");
         jbtn.setBounds(50, 50, 80, 35);
         jbtn.addActionListener(new ActionListener() {
 
@@ -42,6 +44,7 @@ public class Frame extends JFrame {
         f.setLocationRelativeTo(null);
         f.setResizable(false);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        f.getContentPane().setBackground(Color.gray);
         f.setVisible(true);
     }
 

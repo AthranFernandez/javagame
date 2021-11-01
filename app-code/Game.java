@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 
 public class Game extends JPanel implements ActionListener, KeyListener {
 
@@ -26,6 +27,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(x, y, 50, 50);
         g.drawString("X = " + x + "Y = " + y, 375, 25);
+
+        Random orbPos = new Random();
+
+        Graphics2D orb = (Graphics2D) g;
+        orb.drawOval(orbPos.nextInt(1, 443), orbPos.nextInt(1, 420), 30, 30);
+        try {
+            orb.wait();
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        orb.setColor(Color.blue);
     }
 
     public void actionPerformed(ActionEvent ae) {
