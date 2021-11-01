@@ -92,9 +92,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             down();
-            if (y > 425) {
+            if (y > 386) {
                 vely = 0;
-                y = 425;            
+                y = 386;            
             }
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
@@ -126,9 +126,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         }
         else if (keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
             stopMovement_DOWN();
-            if (y > 420) {
+            if (y > 386) {
                 vely = 0;
-                y = 420;
+                y = 386;
             }
         }
         else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
