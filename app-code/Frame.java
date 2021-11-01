@@ -21,7 +21,7 @@ public class Frame extends JFrame {
         setVisible(true);
 
 
-        jbtn = new JButton("Add Panel");
+        jbtn = new JButton("Adding Panel");
         jbtn.setBounds(50, 50, 80, 35);
         jbtn.addActionListener(new ActionListener() {
 

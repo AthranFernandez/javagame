@@ -7,9 +7,10 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     public int x = 0, y = 0, velx = 0, vely = 0;
     public boolean hitAnObject = false;
-    public int xBound = 443, yBound = 420;
+    public int spawnTime = 0;
     public Color c = Color.BLACK;
     Timer timer = new Timer(5, this);
+    public Graphics2D orb;
 
 
     public Game() {
@@ -28,16 +29,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g2.fillRect(x, y, 50, 50);
         g.drawString("X = " + x + "Y = " + y, 375, 25);
 
-        Random orbPos = new Random();
-
-        Graphics2D orb = (Graphics2D) g;
-        orb.drawOval(orbPos.nextInt(1, 443), orbPos.nextInt(1, 420), 30, 30);
-        try {
-            orb.wait();
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-        orb.setColor(Color.blue);
+        orb = (Graphics2D) g;
     }
 
     public void actionPerformed(ActionEvent ae) {
