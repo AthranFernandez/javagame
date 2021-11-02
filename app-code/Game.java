@@ -19,7 +19,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-        new Frame();
+        Frame frame = new Frame();
     }
 
     @Override
@@ -143,6 +143,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public static void main(String[] args) {
         Game game = new Game();
         game.getBackground();
+        game.setFocusable(true);
     }
 
 }
