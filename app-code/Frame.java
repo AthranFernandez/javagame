@@ -1,9 +1,13 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Frame extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Frame {
 
     //makes a window -[ JFRAME ] and initializes it
 
@@ -11,14 +15,17 @@ public class Frame extends JFrame {
     public int w = 500, h = 500;
 
     public JButton jbtn;
+    public JFrame jfr;
 
     public void Win_init() {
-        add(new Game());
-        setSize(new Dimension(w, h));
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        jfr = new JFrame("Code");
+        jfr.add(new Game());
+        jfr.setSize(new Dimension(w, h));
+        jfr.setLocationRelativeTo(null);
+        jfr.setResizable(false);
+        jfr.requestFocus();
+        jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jfr.setVisible(true);
 
 
         jbtn = new JButton("Adding Panel");
@@ -33,7 +40,7 @@ public class Frame extends JFrame {
             
         });
 
-        add(jbtn, BorderLayout.SOUTH);
+        jfr.add(jbtn, BorderLayout.SOUTH);
         jbtn.setVisible(true);
 
     }
