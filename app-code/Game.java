@@ -11,6 +11,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public Color c = Color.BLACK;
     Timer timer = new Timer(5, this);
     public Graphics2D orb;
+    public JButton jButton;
 
 
     public Game() {
@@ -143,7 +144,6 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public static void main(String[] args) {
         Game game = new Game();
         game.getBackground();
-        game.setFocusable(true);
     }
 
 }
