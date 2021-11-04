@@ -32,8 +32,25 @@ public class Frame {
         jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jfr.setVisible(true);
 
-        // CODE: AUDIO
-        try {
+        // CODE: JAVABUTTON
+
+        jbtn = new JButton("Adding Panel");
+        jbtn.setBounds(50, 50, 80, 35);
+        jbtn.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                NewWindow();
+            }
+
+        });
+
+        jfr.add(jbtn, BorderLayout.SOUTH);
+        jbtn.setVisible(true);
+
+         // CODE: AUDIO
+         try {
             URL url = this.getClass().getClassLoader().getResource("music.wav");
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
             Clip c = AudioSystem.getClip();
@@ -51,23 +68,6 @@ public class Frame {
         } catch (LineUnavailableException lue) {
             lue.printStackTrace();
         }
-
-        // CODE: JAVABUTTON
-
-        jbtn = new JButton("Adding Panel");
-        jbtn.setBounds(50, 50, 80, 35);
-        jbtn.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                NewWindow();
-            }
-
-        });
-
-        jfr.add(jbtn, BorderLayout.SOUTH);
-        jbtn.setVisible(true);
 
     }
 
