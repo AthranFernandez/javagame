@@ -29,6 +29,7 @@ public class Frame {
         jfr.setSize(new Dimension(w, h));
         jfr.setLocationRelativeTo(null);
         jfr.setResizable(false); //new border
+        jfr.setFocusableWindowState(true);
         jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jfr.setVisible(true);
 

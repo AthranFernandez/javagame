@@ -10,7 +10,6 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     public int spawnTime = 0;
     public Color c = Color.BLACK;
     Timer timer = new Timer(5, this);
-    public Graphics2D orb;
     public JButton jButton;
 
 
@@ -30,7 +29,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g2.fillRect(x, y, 50, 50);
         g.drawString("X = " + x + "Y = " + y, 375, 25);
 
-        orb = (Graphics2D) g;
+        // 
+
+        Graphics2D orb = (Graphics2D) g;
+        orb.setPaint(Color.BLUE);
+        
     }
 
     public void actionPerformed(ActionEvent ae) {
