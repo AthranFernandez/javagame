@@ -10,6 +10,11 @@ import java.io.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/*
+* Author: Athran Fernandez
+* Github-Files: github.com/AthranFernandez/javagame
+*/
+
 public class Frame {
 
     //makes a window -[ JFRAME ] and initializes it
@@ -29,7 +34,6 @@ public class Frame {
         jfr.setSize(new Dimension(w, h));
         jfr.setLocationRelativeTo(null);
         jfr.setResizable(false); //new border
-        jfr.setFocusableWindowState(true);
         jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jfr.setVisible(true);
 

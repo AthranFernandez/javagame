@@ -3,6 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
+/*
+* Author: Athran Fernandez
+* Github-Files: github.com/AthranFernandez/javagame
+*/
+
 public class Game extends JPanel implements ActionListener, KeyListener {
 
     public int x = 0, y = 0, velx = 0, vely = 0;
@@ -29,11 +34,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g2.fillRect(x, y, 50, 50);
         g.drawString("X = " + x + "Y = " + y, 375, 25);
 
-        // 
+        // Random
 
-        Graphics2D orb = (Graphics2D) g;
-        orb.setPaint(Color.BLUE);
+        Random n = new Random();
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawOval(100, 100, 50, 49);
+        if (g2.getClipBounds().intersects(g2d.getClipBounds())) {
+            g2d.drawOval(n.nextInt(1, 443), n.nextInt(1, 432), 50, 49);
+        }
         
+
     }
 
     public void actionPerformed(ActionEvent ae) {
